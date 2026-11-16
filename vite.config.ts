@@ -9,12 +9,8 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react(), legacy()],
     define: {
-      'process.env.REACT_APP_SUPABASE_URL': JSON.stringify(
-        env.REACT_APP_SUPABASE_URL || env.VITE_SUPABASE_URL || '',
-      ),
-      'process.env.REACT_APP_SUPABASE_KEY': JSON.stringify(
-        env.REACT_APP_SUPABASE_KEY || env.VITE_SUPABASE_KEY || '',
-      ),
+      'process.env.REACT_APP_SUPABASE_URL': JSON.stringify(env.REACT_APP_SUPABASE_URL || env.VITE_SUPABASE_URL || ''),
+      'process.env.REACT_APP_SUPABASE_KEY': JSON.stringify(env.REACT_APP_SUPABASE_KEY || env.VITE_SUPABASE_KEY || ''),
       'process.env': {},
     },
     test: {

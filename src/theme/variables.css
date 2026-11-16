@@ -1,2 +1,17 @@
 /* For information on how to create your own theme, please refer to:
 http://ionicframework.com/docs/theming/ */
+
+/* Ionic layout overrides for standard web / Bootstrap scrolling */
+ion-app {
+  min-height: 100vh !important;
+  height: auto !important;
+  overflow-y: auto !important;
+  display: block !important;
+  position: relative !important;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-y: auto !important;
+}
