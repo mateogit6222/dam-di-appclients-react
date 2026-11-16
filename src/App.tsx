@@ -1,6 +1,6 @@
 import { IonApp, setupIonicReact } from '@ionic/react';
-import React from 'react';
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom';
 
 /* Bootstrap 5 CSS */
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -18,10 +18,21 @@ import NewClientPage from './pages/NewClientPage';
 
 setupIonicReact();
 
+const ScrollToTop: React.FC = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
+
 export default function App(): React.JSX.Element {
   return (
     <IonApp
       style={{
+        position: 'static',
         minHeight: '100vh',
         height: 'auto',
         overflowY: 'auto',
@@ -29,6 +40,7 @@ export default function App(): React.JSX.Element {
       }}
     >
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
         <main className="pb-5">
           <Routes>
